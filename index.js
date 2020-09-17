@@ -47,12 +47,15 @@ function total() {
 
 function removeFromCart(item) {
   // write your code here
-  let remove = cart.indexOf(item)
-  if (cart.includes(Object.values(cart[remove])[0])){
-    cart.splice(remove, 1)
-    return cart
-  } else {
-  return 'That item is not in your cart.'
+  var allItems = []
+  for (let i = 0; i < cart.length; i++) {
+    if (item === cart[i].itemName) {
+      cart.splice(i, 1)
+      return cart;
+    }
+  }
+  if (item != cart[item]) {
+    return "That item is not in your cart."
   }
 }
 
